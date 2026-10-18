@@ -4,102 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Template CV ATS</title>
+
+<!-- Font Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (Play CDN) -->
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#1f3a75', deep: '#14275a' },
+          panel: '#d9d9d9',
+          mint: '#eafff0',
+        },
+        fontFamily: {
+          sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
 </head>
-<body>
 
-<header>
-  <a href="index.html">&larr; Kembali</a>
-  <h1>Template CV ATS</h1>
-</header>
+<body class="m-0 min-h-screen bg-panel font-sans text-white">
 
-<main>
+<div class="min-h-screen rounded-tl-[45%_110px] bg-gradient-to-br from-navy to-navy-deep px-4 pb-10 pt-6 sm:px-6 sm:pb-12 sm:pt-7">
+  <div class="mx-auto max-w-[960px]">
 
-  <!-- Filter & Search -->
-  <section aria-label="Filter dan pencarian">
-    <details>
-      <summary>Rumpun Karir &#9662;</summary>
-      <fieldset>
-        <legend>Pilih rumpun karir</legend>
-        <label><input type="checkbox" name="rumpun" value="it"> IT</label><br>
-        <label><input type="checkbox" name="rumpun" value="pemasaran"> Pemasaran</label><br>
-        <label><input type="checkbox" name="rumpun" value="keuangan"> Keuangan</label><br>
-        <label><input type="checkbox" name="rumpun" value="hukum"> Hukum</label><br>
-        <label><input type="checkbox" name="rumpun" value="teknik"> Teknik</label><br>
-        <label><input type="checkbox" name="rumpun" value="desain"> Desain</label><br>
-        <label><input type="checkbox" name="rumpun" value="pendidikan"> Pendidikan</label><br>
-        <label><input type="checkbox" name="rumpun" value="kesehatan"> Kesehatan</label>
-      </fieldset>
-    </details>
+    <header>
+      <a href="#" aria-label="Kembali" class="inline-block text-[22px] leading-none text-white no-underline">&larr;</a>
+      <h1 class="mb-7 mt-1.5 text-center text-2xl font-bold sm:text-[28px]">Template CV ATS</h1>
+    </header>
 
-    <p>
-      <label for="cari">Cari Template</label>
-      <input type="search" id="cari" name="cari" placeholder="Cari Template..">
-    </p>
-  </section>
+    <main>
+      <!-- Filter & Search -->
+      <section aria-label="Filter dan pencarian" class="flex flex-wrap items-start gap-6 border-b border-white/70 pb-5">
 
-  <hr>
+        <details class="group relative max-w-[300px] flex-[1_1_220px]">
+          <summary class="flex cursor-pointer list-none items-center justify-between bg-panel px-3.5 py-3 text-[17px] font-bold text-navy [&::-webkit-details-marker]:hidden">
+            Rumpun Karir
+            <span class="transition-transform duration-200 group-open:rotate-180">&#9662;</span>
+          </summary>
+          <fieldset class="absolute inset-x-0 top-full z-10 mt-1.5 border-0 bg-white px-3.5 py-2.5 text-navy shadow-xl">
+            <legend class="sr-only">Pilih rumpun karir</legend>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="it" class="h-4 w-4 accent-navy"> IT</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="pemasaran" class="h-4 w-4 accent-navy"> Pemasaran</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="keuangan" class="h-4 w-4 accent-navy"> Keuangan</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="hukum" class="h-4 w-4 accent-navy"> Hukum</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="teknik" class="h-4 w-4 accent-navy"> Teknik</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="desain" class="h-4 w-4 accent-navy"> Desain</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="pendidikan" class="h-4 w-4 accent-navy"> Pendidikan</label>
+            <label class="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm font-semibold"><input type="checkbox" name="rumpun" value="kesehatan" class="h-4 w-4 accent-navy"> Kesehatan</label>
+          </fieldset>
+        </details>
 
-  <!-- Katalog Template -->
-  <section aria-label="Katalog template">
-    <table border="1" cellpadding="12">
-      <tr>
-        <td>
-          <article>
-            <figure>
-              <pre>
+        <div class="flex-[2_1_320px] bg-panel focus-within:ring-[3px] focus-within:ring-white/50">
+          <label for="cari" class="sr-only">Cari Template</label>
+          <input type="search" id="cari" name="cari" placeholder="Cari Template.."
+                 class="w-full border-0 bg-transparent px-3.5 py-3 text-[17px] font-bold text-navy outline-none placeholder:text-navy placeholder:opacity-100">
+        </div>
+      </section>
 
-   [ Pratinjau
-     Template ]
+      <!-- Katalog Template -->
+      <section aria-label="Katalog template" class="mt-9 grid grid-cols-[repeat(auto-fit,minmax(210px,1fr))] gap-7">
 
-              </pre>
-            </figure>
-            <h2>Template Modern</h2>
-            <p>Cocok untuk: Pemasaran</p>
-            <button type="button">Pratinjau</button>
-            <button type="button">Unduh (.DOCX)</button>
-          </article>
-        </td>
+        <article class="bg-panel px-[18px] pb-3.5 pt-[18px]">
+          <figure class="m-0 flex aspect-[2/3] items-center justify-center bg-mint text-center text-[13px] text-[#6b8f78]">
+            <pre class="m-0 whitespace-pre-line font-[inherit]">Pratinjau
+Template</pre>
+          </figure>
+          <div class="mt-4 bg-navy px-3 pb-3 pt-2.5">
+            <h2 class="m-0 text-[15px] font-bold">Template Modern</h2>
+            <p class="mb-2.5 mt-0.5 text-[12.5px]">Cocok untuk: Pemasaran</p>
+            <div class="flex gap-2.5">
+              <button type="button" class="cursor-pointer border border-[#9aa3b8] bg-panel px-3 py-1.5 text-[13px] text-navy transition-colors hover:bg-white">Pratinjau</button>
+              <button type="button" class="flex-1 cursor-pointer border border-panel bg-panel px-3 py-1.5 text-[13px] font-bold text-navy transition-colors hover:border-white hover:bg-navy-deep hover:text-white">Unduh .DOCX</button>
+            </div>
+          </div>
+        </article>
 
-        <td>
-          <article>
-            <figure>
-              <pre>
+        <article class="bg-panel px-[18px] pb-3.5 pt-[18px]">
+          <figure class="m-0 flex aspect-[2/3] items-center justify-center bg-mint text-center text-[13px] text-[#6b8f78]">
+            <pre class="m-0 whitespace-pre-line font-[inherit]">Pratinjau
+Template</pre>
+          </figure>
+          <div class="mt-4 bg-navy px-3 pb-3 pt-2.5">
+            <h2 class="m-0 text-[15px] font-bold">Template Klasik</h2>
+            <p class="mb-2.5 mt-0.5 text-[12.5px]">Cocok untuk: Keuangan</p>
+            <div class="flex gap-2.5">
+              <button type="button" class="cursor-pointer border border-[#9aa3b8] bg-panel px-3 py-1.5 text-[13px] text-navy transition-colors hover:bg-white">Pratinjau</button>
+              <button type="button" class="flex-1 cursor-pointer border border-panel bg-panel px-3 py-1.5 text-[13px] font-bold text-navy transition-colors hover:border-white hover:bg-navy-deep hover:text-white">Unduh .DOCX</button>
+            </div>
+          </div>
+        </article>
 
-   [ Pratinjau
-     Template ]
+        <article class="bg-panel px-[18px] pb-3.5 pt-[18px]">
+          <figure class="m-0 flex aspect-[2/3] items-center justify-center bg-mint text-center text-[13px] text-[#6b8f78]">
+            <pre class="m-0 whitespace-pre-line font-[inherit]">Pratinjau
+Template</pre>
+          </figure>
+          <div class="mt-4 bg-navy px-3 pb-3 pt-2.5">
+            <h2 class="m-0 text-[15px] font-bold">Template Teknis</h2>
+            <p class="mb-2.5 mt-0.5 text-[12.5px]">Cocok untuk: IT</p>
+            <div class="flex gap-2.5">
+              <button type="button" class="cursor-pointer border border-[#9aa3b8] bg-panel px-3 py-1.5 text-[13px] text-navy transition-colors hover:bg-white">Pratinjau</button>
+              <button type="button" class="flex-1 cursor-pointer border border-panel bg-panel px-3 py-1.5 text-[13px] font-bold text-navy transition-colors hover:border-white hover:bg-navy-deep hover:text-white">Unduh .DOCX</button>
+            </div>
+          </div>
+        </article>
 
-              </pre>
-            </figure>
-            <h2>Template Klasik</h2>
-            <p>Cocok untuk: Keuangan</p>
-            <button type="button">Pratinjau</button>
-            <button type="button">Unduh (.DOCX)</button>
-          </article>
-        </td>
+      </section>
 
-        <td>
-          <article>
-            <figure>
-              <pre>
+      <p class="mt-8 text-center text-sm font-semibold">Menampilkan 3 dari 24 template &mdash; scroll untuk melihat lebih banyak</p>
+    </main>
 
-   [ Pratinjau
-     Template ]
-
-              </pre>
-            </figure>
-            <h2>Template Teknis</h2>
-            <p>Cocok untuk: IT</p>
-            <button type="button">Pratinjau</button>
-            <button type="button">Unduh (.DOCX)</button>
-          </article>
-        </td>
-      </tr>
-    </table>
-  </section>
-
-  <p>Menampilkan 3 dari 24 template &mdash; scroll untuk melihat lebih banyak</p>
-
-</main>
+  </div>
+</div>
 
 </body>
 </html>
