@@ -245,6 +245,12 @@
                 </div>
             </div>
         </section>
+
+          <section id="riwayat" class="py-16 bg-white">
+    <h2 class="text-3xl font-extrabold text-center text-brand-dark mb-8">Riwayat Pengecekan</h2>
+    <ul id="daftar-riwayat" class="max-w-3xl mx-auto px-4 space-y-3"></ul>
+</section>
+        
     </main>
 
     <!-- Footer -->
@@ -303,6 +309,38 @@
 
     <script>
         lucide.createIcons();
+
+        async function muatRiwayat() {
+    const list = document.getElementById('daftar-riwayat');
+    try {
+        const res = await fetch('http://localhost:3000/api/riwayat');
+        const data = await res.json();
+
+        if (data.length === 0) {
+            list.innerHTML = '<li class="text-center text-slate-500">Belum ada riwayat.</li>';
+            return;
+        }
+
+        list.innerHTML = '';
+        data.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'flex justify-between bg-brand-blue text-white p-4 rounded-xl';
+
+            const nama = document.createElement('span');
+            nama.textContent = item.namaFile;
+
+            const skor = document.createElement('strong');
+            skor.textContent = item.skorAts + '%';
+
+            li.append(nama, skor);
+            list.appendChild(li);
+        });
+    } catch (err) {
+        list.innerHTML = '<li class="text-center text-red-600">Gagal memuat riwayat.</li>';
+    }
+}
+muatRiwayat();
+        
     </script>
 </body>
 </html>
